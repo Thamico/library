@@ -20,3 +20,33 @@ h4 {
   padding: 2px 16px;
   text-align: center;
 }
+.book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px black;
+  border-radius: 20%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  height: 300px;
+  width: 250px;
+  padding: 15px;
+  margin: 20px;
+  background-color: beige;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.author {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.pages {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
