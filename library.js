@@ -13,8 +13,9 @@ function addBookToLibrary() {
     document.getElementById("bname").value,
     document.getElementById("aname").value,
     document.getElementById("pages").value,
-    document.getElementById("scales").value
+    document.getElementById("scales").checked
   );
+  console.log(book);
   myLibrary.push(book);
   setData();
   render();
@@ -59,9 +60,13 @@ function createBook(book) {
   pageDiv.classList.add("pages");
   bookDiv.appendChild(pageDiv);
 
-  readBtn.classList.add("readBtn");
+  bookDiv.classList.add("btn");
   bookDiv.appendChild(readBtn);
-  if (book.read === false) {
+
+  removeBtn.textContent = "remove";
+  bookDiv.appendChild(removeBtn);
+
+  if (!book.read) {
     readBtn.textContent = "Not Read";
     readBtn.style.backgroundColor = "#e04f63";
   } else {
@@ -70,4 +75,18 @@ function createBook(book) {
   }
 
   library.appendChild(bookDiv);
+
+  //remove finished book
+  removeBtn.addEventListener("click", () => {
+    myLibrary.splice(myLibrary.indexOf(book), 1);
+    setData();
+    render();
+  });
+
+  //toggle read button
+  readBtn.addEventListener("click", () => {
+    book.read = !book.read;
+    setData();
+    render();
+  });
 }

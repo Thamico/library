@@ -16,6 +16,9 @@ h4 {
   transition: 0.3s;
   border-radius: 20%; /* 5px rounded corners */
 }
+.stack {
+  display: flex;
+}
 .container {
   padding: 2px 16px;
   text-align: center;
@@ -49,4 +52,8 @@ h4 {
 .pages {
   font-size: 25px;
   margin-bottom: 20px;
+}
+
+button {
+  margin-bottom: 10px;
 }
